@@ -20,6 +20,9 @@ function Login() {
     const onClickLogin = () => {
         console.log('click login')
     }
+    const onClickGfitGive = () => {
+        console.log('click login')
+    }
 
     return(
         <S.Background>
@@ -34,6 +37,9 @@ function Login() {
                 <button type="button" onClick={onClickLogin}>로그인 할래요?</button>
             </S.SpeechBubble>
           </S.LoginBox>
+          <S.GiftGetSpeechBubble>
+              <button type="button" onClick={onClickGfitGive}>선물 <br></br>받을래요?</button>
+          </S.GiftGetSpeechBubble>
         </S.Background>
     )
 }

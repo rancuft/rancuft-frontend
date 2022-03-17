@@ -12,7 +12,6 @@ export const Box = styled.div`
   }
 `;
 
-
 export const SpeechBubble = styled.div`
   button {
     position: relative;
@@ -28,14 +27,13 @@ export const SpeechBubble = styled.div`
   }
   ,
   button:after {
-    
     left: 98.5%;
     top: 23.8%;
     border: solid;
     content: "";
 
     position: absolute;
-    border-color: rgba(255, 255, 255, 0);;
+    border-color: rgba(255, 255, 255, 0);
     border-left-color: #fff;
 
     border-width: 6px;
@@ -48,8 +46,51 @@ export const SpeechBubble = styled.div`
     content: "";
 
     position: absolute;
-    border-color: rgba(0, 0, 0, 0);;
+    border-color: rgba(0, 0, 0, 0);
     border-left-color: #000;
+
+    border-width: 7.5px;
+  }
+`;
+
+export const GiftGetSpeechBubble = styled.div`
+  button {
+    position: relative;
+    margin: 40px 0 0 70px;
+
+    width: 80px;
+    height: 60px;
+    font-size: 10px;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    box-shadow: 1px 2px 2px 0.2px gray;
+  }
+  ,
+  button:after {
+    left: -14.5%;
+    top: 37.8%;
+    border: solid;
+    content: "";
+
+    position: absolute;
+    border-color: rgba(0, 255, 255, 0);
+    border-right-color: #fff;
+
+    border-width: 6px;
+  }
+  ,
+  button:before {
+    left: -19.9%;
+    top: 35.55%;
+    border: solid;
+    content: "";
+
+    position: absolute;
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: #000;
 
     border-width: 7.5px;
   }
@@ -57,7 +98,7 @@ export const SpeechBubble = styled.div`
 
 export const Background = styled.div`
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 `;
