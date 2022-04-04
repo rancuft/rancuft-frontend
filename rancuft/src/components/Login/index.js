@@ -31,8 +31,9 @@ function Login() {
   });
 
   return (
-    <S.Background>
+    <>
       {isMobile && (
+        <S.FullBackground>
         <S.Background>
           <S.LoginBox>
             <S.Box>
@@ -60,10 +61,16 @@ function Login() {
               선물 <br></br>받을래요?
             </button>
           </S.GiftGetSpeechBubble>
+         
         </S.Background>
+        
+        <S.Image>
+         <img alt="귀여운 고슴도치 그림입니다" src="img/goImage.png"/>
+        </S.Image>
+       </S.FullBackground>
       )}
       {isPc && <h2>TEST</h2>}
-    </S.Background>
+    </>
   );
 }
 

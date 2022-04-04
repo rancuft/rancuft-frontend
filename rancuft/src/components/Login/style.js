@@ -2,33 +2,45 @@ import styled from "@emotion/styled";
 
 export const Box = styled.div`
   input {
-    width: 136px;
-    height: 25px;
-    font-size: 10px;
+    width: 200px;
+    height: 40px;
+    font-size: 15px;
     margin: 0 0 40px 0;
     padding-left: 5px;
-    border: solid 1.5px;
+    border: 1.5px solid ;
     box-shadow: 1px 2px 4px 0.2px gray;
+  }
+`;
+
+export const Image = styled.div`
+  img{
+    width: 200px;
+    padding-left: 100px;
+    padding-top: 470px;
+
   }
 `;
 
 export const SpeechBubble = styled.div`
   button {
     position: relative;
-    width: 122px;
-    height: 25px;
-    font-size: 10px;
+    width: 180px;
+    height: 40px;
+    font-size: 15px;
 
     background: #ffffff;
 
     border-radius: 15px;
 
+    border: solid 1.5px;
     box-shadow: 1px 2px 2px 0.2px gray;
+
+    onMouseOver={()=>setIsListHover(true)}
   }
   ,
   button:after {
-    left: 98.5%;
-    top: 23.8%;
+    left: 99.5%;
+    top: 30.8%;
     border: solid;
     content: "";
 
@@ -40,8 +52,8 @@ export const SpeechBubble = styled.div`
   }
   ,
   button:before {
-    left: 99.3%;
-    top: 15%;
+    left: 100.3%;
+    top: 27.98%;
     border: solid;
     content: "";
 
@@ -56,21 +68,22 @@ export const SpeechBubble = styled.div`
 export const GiftGetSpeechBubble = styled.div`
   button {
     position: relative;
-    margin: 40px 0 0 70px;
+    margin: 40px 0 0 90px;
 
-    width: 80px;
+    width: 110px;
     height: 60px;
-    font-size: 10px;
+    font-size: 15px;
 
     background: #ffffff;
 
     border-radius: 15px;
+    border: solid 1.5px;
 
     box-shadow: 1px 2px 2px 0.2px gray;
   }
   ,
   button:after {
-    left: -14.5%;
+    left: -10.5%;
     top: 37.8%;
     border: solid;
     content: "";
@@ -83,8 +96,8 @@ export const GiftGetSpeechBubble = styled.div`
   }
   ,
   button:before {
-    left: -19.9%;
-    top: 35.55%;
+    left: -14.9%;
+    top: 35.64%;
     border: solid;
     content: "";
 
@@ -96,6 +109,9 @@ export const GiftGetSpeechBubble = styled.div`
   }
 `;
 
+export const Title = styled.div`
+`;
+
 export const Background = styled.div`
   position: absolute;
   top: 30%;
@@ -103,7 +119,12 @@ export const Background = styled.div`
   transform: translateX(-50%);
 `;
 
+export const FullBackground = styled.div`
+`;
+
 export const LoginBox = styled.div`
   input {
   }
 `;
+
+
