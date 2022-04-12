@@ -27,12 +27,8 @@ export const SpeechBubble = styled.div`
 
     border: solid 1.5px;
     box-shadow: 1px 2px 2px 0.2px gray;
-
-    &:hover{
-      background-color: red;
-    }
+    
   }
-  
   button:after {
     left: 99.5%;
     top: 30.8%;
@@ -46,7 +42,6 @@ export const SpeechBubble = styled.div`
     border-width: 6px;
     
   }
-  
   button:before {
     left: 100.3%;
     top: 27.98%;
@@ -58,7 +53,13 @@ export const SpeechBubble = styled.div`
     border-left-color: #000;
 
     border-width: 7.5px;
+    
   }
+  button:hover {
+    background-color: black;
+    color: white;
+  }
+  
 `;
 
 export const GiftGetSpeechBubble = styled.div`
@@ -89,6 +90,7 @@ export const GiftGetSpeechBubble = styled.div`
     border-right-color: #fff;
 
     border-width: 6px;
+  
   }
   
   button:before {
@@ -103,20 +105,20 @@ export const GiftGetSpeechBubble = styled.div`
 
     border-width: 7.5px;
   }
-`;
-
-export const Title = styled.div`
+  button:hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 export const Background = styled.div`
-  top: 100px;
+  top: 50px;
   position: relative;
-
 `;
 
 export const FullBackground = styled.div`
   position: absolute;
-  top:20%;
+  top:15%;
   bottom: 20%;
   right: 50%;
   padding-right:30px;
@@ -148,4 +150,22 @@ export const CatImage = styled.div`
     top: 140px;
     left: 180px;
   }
+`;
+
+export const Title = styled.div`
+  text{
+    font-size: 20px;
+    background: linear-gradient(to right top, #7DFF5C, #A9FFF0);
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+
+`
+
+export const TRandomGift = styled.div`
+
+`
+
+export const TCute = styled.div`
+
 `

@@ -34,6 +34,18 @@ function Login() {
     <>
       {isMobile && (        
       <S.FullBackground>
+        <S.Title>
+          <S.TCute>
+            <text>
+            귀요미
+            </text>
+            
+          </S.TCute>
+          <S.TRandomGift>
+            <text>랜덤 선물</text>
+            
+          </S.TRandomGift>
+        </S.Title>
         <S.Background>
           <S.LoginBox>
             <S.Box>
@@ -70,11 +82,6 @@ function Login() {
         </S.GoImage>
          
         </S.Background>
-        
-       
-        
-        
-
        </S.FullBackground>
        )}
       {isPc && <h2>TEST</h2>}
