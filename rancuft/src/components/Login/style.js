@@ -12,14 +12,7 @@ export const Box = styled.div`
   }
 `;
 
-export const Image = styled.div`
-  img{
-    width: 200px;
-    padding-left: 100px;
-    padding-top: 470px;
 
-  }
-`;
 
 export const SpeechBubble = styled.div`
   button {
@@ -35,9 +28,11 @@ export const SpeechBubble = styled.div`
     border: solid 1.5px;
     box-shadow: 1px 2px 2px 0.2px gray;
 
-    onMouseOver={()=>setIsListHover(true)}
+    &:hover{
+      background-color: red;
+    }
   }
-  ,
+  
   button:after {
     left: 99.5%;
     top: 30.8%;
@@ -49,8 +44,9 @@ export const SpeechBubble = styled.div`
     border-left-color: #fff;
 
     border-width: 6px;
+    
   }
-  ,
+  
   button:before {
     left: 100.3%;
     top: 27.98%;
@@ -81,7 +77,7 @@ export const GiftGetSpeechBubble = styled.div`
 
     box-shadow: 1px 2px 2px 0.2px gray;
   }
-  ,
+  
   button:after {
     left: -10.5%;
     top: 37.8%;
@@ -94,7 +90,7 @@ export const GiftGetSpeechBubble = styled.div`
 
     border-width: 6px;
   }
-  ,
+  
   button:before {
     left: -14.9%;
     top: 35.64%;
@@ -113,14 +109,22 @@ export const Title = styled.div`
 `;
 
 export const Background = styled.div`
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 100px;
+  position: relative;
+
 `;
 
 export const FullBackground = styled.div`
+  position: absolute;
+  top:20%;
+  bottom: 20%;
+  right: 50%;
+  padding-right:30px;
+  padding-left:30px;
+  padding-bottom:200px;
+  transform: translateX(50%);
 `;
+
 
 export const LoginBox = styled.div`
   input {
@@ -128,3 +132,20 @@ export const LoginBox = styled.div`
 `;
 
 
+export const GoImage = styled.div`
+  img{
+    width: 200px;
+    left: -90px;
+    position: absolute;
+    bottom: -116px;
+  }
+`;
+
+export const CatImage = styled.div`
+  img{
+    width: 120px;
+    position: absolute;
+    top: 140px;
+    left: 180px;
+  }
+`

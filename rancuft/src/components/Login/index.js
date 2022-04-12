@@ -32,8 +32,8 @@ function Login() {
 
   return (
     <>
-      {isMobile && (
-        <S.FullBackground>
+      {isMobile && (        
+      <S.FullBackground>
         <S.Background>
           <S.LoginBox>
             <S.Box>
@@ -56,19 +56,27 @@ function Login() {
               </button>
             </S.SpeechBubble>
           </S.LoginBox>
+          <S.CatImage>
+            <img alt = "귀여운 호랑이 그립입니다" src="img/tiger.png"/>
+          </S.CatImage>
           <S.GiftGetSpeechBubble>
             <button type="button" onClick={onClickGfitGive}>
               선물 <br></br>받을래요?
             </button>
+            
           </S.GiftGetSpeechBubble>
+          <S.GoImage>
+          <img alt="귀여운 고슴도치 그림입니다" src="img/goImage.png"/>
+        </S.GoImage>
          
         </S.Background>
         
-        <S.Image>
-         <img alt="귀여운 고슴도치 그림입니다" src="img/goImage.png"/>
-        </S.Image>
+       
+        
+        
+
        </S.FullBackground>
-      )}
+       )}
       {isPc && <h2>TEST</h2>}
     </>
   );
