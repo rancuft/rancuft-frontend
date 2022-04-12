@@ -34,16 +34,15 @@ function Login() {
     <>
       {isMobile && (        
       <S.FullBackground>
+        <S.CatImage>
+          <img alt="귀여운 고양이 그림입니다" src="img/cat.png"/>
+        </S.CatImage>
         <S.Title>
           <S.TCute>
-            <text>
-            귀요미
-            </text>
-            
+            <text>귀요미</text>
           </S.TCute>
           <S.TRandomGift>
             <text>랜덤 선물</text>
-            
           </S.TRandomGift>
         </S.Title>
         <S.Background>
@@ -68,9 +67,9 @@ function Login() {
               </button>
             </S.SpeechBubble>
           </S.LoginBox>
-          <S.CatImage>
+          <S.TigerImage>
             <img alt = "귀여운 호랑이 그립입니다" src="img/tiger.png"/>
-          </S.CatImage>
+          </S.TigerImage>
           <S.GiftGetSpeechBubble>
             <button type="button" onClick={onClickGfitGive}>
               선물 <br></br>받을래요?

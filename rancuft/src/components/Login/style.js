@@ -143,12 +143,21 @@ export const GoImage = styled.div`
   }
 `;
 
-export const CatImage = styled.div`
+export const TigerImage = styled.div`
   img{
     width: 120px;
     position: absolute;
     top: 140px;
     left: 180px;
+  }
+`;
+
+export const CatImage = styled.div`
+  img{
+    top: -50px;
+    left: -40px;
+    width: 130px;
+    position: absolute;
   }
 `;
 
