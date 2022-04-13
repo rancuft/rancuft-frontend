@@ -30,9 +30,10 @@ function Login() {
     query: "(min-width:768px)",
   });
 
+  
   return (
     <>
-      {isMobile && (        
+      {isMobile && (                
       <S.FullBackground>
         <S.CatImage>
           <img alt="귀여운 고양이 그림입니다" src="img/cat.png"/>
@@ -81,6 +82,11 @@ function Login() {
         </S.GoImage>
          
         </S.Background>
+        <S.Music>
+          <a href="/home">
+          <img alt="음표 사진 svg입니다" src="img/bi_music-note-list.svg"></img>
+          </a>
+        </S.Music>
        </S.FullBackground>
        )}
       {isPc && <h2>TEST</h2>}

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { type } from "@testing-library/user-event/dist/type";
 
 export const Box = styled.div`
   input {
@@ -179,6 +180,15 @@ export const TRandomGift = styled.div`
   
 
 `
+
+export const Music = styled.div`
+img{
+    bottom: 40px;
+    right: -10px;
+    width: 20px;
+    position: absolute;
+
+}`
 
 export const TCute = styled.div`
   text{
