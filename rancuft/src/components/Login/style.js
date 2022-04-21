@@ -177,22 +177,18 @@ export const TRandomGift = styled.div`
     padding-left: 20px;
     word-spacing: 60px;
   }
-  
-
 `
 
 export const Music = styled.div`
 img{
-    bottom: 40px;
-    right: -10px;
+    bottom: -100px;
+    right: -250px;
     width: 20px;
-    position: absolute;
-
+    position: relative;
 }`
 
 export const TCute = styled.div`
   text{
     padding-left: 70px;
   }
-
 `
