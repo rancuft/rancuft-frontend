@@ -83,7 +83,7 @@ function Login() {
          
         </S.Background>
         <S.Music>
-          <a href="/home">
+          <a href="/song">
           <img alt="음표 사진 svg입니다" src="img/bi_music-note-list.svg"></img>
           </a>
         </S.Music>
