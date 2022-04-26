@@ -19,8 +19,6 @@ export const FullBackground = styled.div`
 
 export const DrawBox = styled.div`
   canvas{
-    width: 400px;
-    height: 350px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   }

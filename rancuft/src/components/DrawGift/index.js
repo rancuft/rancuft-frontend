@@ -22,6 +22,8 @@ function DrowGift() {
     query: "(min-width:768px)",
   });
 
+  let x = null;
+  let  y = null;
   const handlerMouseDown = e => {
     if(ctx) {
       drawing = true;
@@ -37,20 +39,21 @@ function DrowGift() {
   }
 
   const draw = e => {
-   
-    const x = e.clientX;
-    const y = e.clientY;
-    if (!drawing) return;
-  
-    ctx.strokeStyle  = "red";
+    x = e.nativeEvent.offsetX;
+    y = e.nativeEvent.offsetY;
+    
+    ctx.strokeStyle  = "orange";
     ctx.lineWidth = 5;
     ctx.lineJoin = 'round';
-
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x, y);
-    ctx.closePath();
-    ctx.stroke();
+    
+    if (!drawing){
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+    } else {
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    }
+  
   }
 
   return (
@@ -62,7 +65,7 @@ function DrowGift() {
           <S.DrawBox>
           <canvas 
           ref={canvas} 
-          width={400} height={350}
+          width="400" height="350"
           onMouseDown={handlerMouseDown}
           onMouseUp={handlerMouseUp}
           onMouseMove = {draw}>이 브라우저는 캔버스를 지원하지 않습니다 😅<br/> 선물 받아보기는 어떠신가요?</canvas>
