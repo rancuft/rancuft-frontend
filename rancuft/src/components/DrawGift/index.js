@@ -8,14 +8,12 @@ function DrowGift() {
 
 
   const canvas = useRef(null);
-  
 
   const [ctx, setCts] = useState(undefined);
 
   useEffect(()=>{
     setCts(canvas.current.getContext('2d'));
-
-  }, []);
+    }, []);
 
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
@@ -24,29 +22,32 @@ function DrowGift() {
     query: "(min-width:768px)",
   });
 
-  const handlerMouseMove = e => {
+  const handlerMouseDown = e => {
     if(ctx) {
       drawing = true;
-      
       var rect = canvas.current.getBoundingClientRect();
       ctx.fillStyle = 'red';
       console.log('ctx true')
-      draw(e);
     }
   }
+
+  const handlerMouseUp = e => {
+    if(ctx) {
+      drawing = false;
+      console.log('음 ')
+    }
+  }
+
   const draw = e => {
     const x = e.offsetX;
     const y = e.offsetY;
     if (!drawing) return;
+    console.log('tt');
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(x, y);
     ctx.stroke();
   }
-
-
-
-
 
   return (
     // https://stickode.tistory.com/240 내가 원하는것!
@@ -58,7 +59,9 @@ function DrowGift() {
           <canvas 
           ref={canvas} 
           width={800} height={800}
-          onMouseMove={handlerMouseMove}>이 브라우저는 캔버스를 지원하지 않습니다 😅<br/> 선물 받아보기는 어떠신가요?</canvas>
+          onMouseDown={handlerMouseDown}
+          onMouseUp={handlerMouseUp}
+          onMouseMove = {draw}>이 브라우저는 캔버스를 지원하지 않습니다 😅<br/> 선물 받아보기는 어떠신가요?</canvas>
           </S.DrawBox>
           <S.Point>
             <input type="range" min="0.1" max="5.0" step="0.1"/>
