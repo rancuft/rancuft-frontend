@@ -55,3 +55,14 @@ export const Title = styled.div`
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   }
 `
+
+export const GiftButton = styled.div`
+ input{
+   margin-top: 40px;
+   margin-left: 37%;
+   padding: 5px 25px 5px 25px;
+   background-color: white;
+   font-weight: bold;
+   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+ }
+`

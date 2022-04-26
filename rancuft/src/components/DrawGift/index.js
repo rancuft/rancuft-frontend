@@ -97,6 +97,9 @@ function DrowGift() {
           <S.Title>
             <input type="text" placeholder="행복의 말 한마디를 해 주세요 💛"></input>
           </S.Title>
+          <S.GiftButton>
+            <input type="button" value="선물 하기"></input>
+          </S.GiftButton>
         </S.Background>
        </S.FullBackground>
        )}
