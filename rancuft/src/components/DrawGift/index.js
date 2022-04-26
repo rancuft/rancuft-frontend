@@ -74,8 +74,7 @@ function DrowGift() {
 
   return (
     // https://stickode.tistory.com/240 내가 원하는것!
-    <>
-      {isMobile && (                
+    <>           
       <S.FullBackground>
         <S.Background>
           <S.Pan>
@@ -98,12 +97,10 @@ function DrowGift() {
             <input type="text" placeholder="행복의 말 한마디를 해 주세요 💛"></input>
           </S.Title>
           <S.GiftButton>
-            <input type="button" value="선물 하기"></input>
+            <button>선물 하기</button>
           </S.GiftButton>
         </S.Background>
        </S.FullBackground>
-       )}
-      {isPc && <h2>TEST</h2>}
     </>
   );
   
