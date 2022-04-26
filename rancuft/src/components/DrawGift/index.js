@@ -4,8 +4,11 @@ import * as S from "./style.js";
 
 
 function DrowGift() {
+  let drawing = false;
+
 
   const canvas = useRef(null);
+  
 
   const [ctx, setCts] = useState(undefined);
 
@@ -23,11 +26,27 @@ function DrowGift() {
 
   const handlerMouseMove = e => {
     if(ctx) {
+      drawing = true;
+      
       var rect = canvas.current.getBoundingClientRect();
       ctx.fillStyle = 'red';
       console.log('ctx true')
+      draw(e);
     }
   }
+  const draw = e => {
+    const x = e.offsetX;
+    const y = e.offsetY;
+    if (!drawing) return;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  }
+
+
+
+
 
   return (
     // https://stickode.tistory.com/240 내가 원하는것!
