@@ -79,7 +79,7 @@ function DrowGift() {
       <S.FullBackground>
         <S.Background>
           <S.Pan>
-            <img alt="펜 그림입니다. 누르면 색깔을 고를 수 있습니다." src="img/Vector.svg"/>
+            <img alt="펜 그림입니다. 누르면 색깔을 고를 수 있습니다." title = "클릭 하시면 색상을 바꿀 수 있습니다." src="img/Vector.svg"/>
           </S.Pan>
           <S.Point>
             <input type="range" id="lineRange" min="0.1"  max="20.0" defaultValue = "5" step="0.1"/>
@@ -93,6 +93,10 @@ function DrowGift() {
           onMouseUp={handlerMouseUp}
           onMouseMove = {draw}>이 브라우저는 캔버스를 지원하지 않습니다 😅<br/> 선물 받아보기는 어떠신가요?</canvas>
           </S.DrawBox>
+        
+          <S.Title>
+            <input type="text" placeholder="행복의 말 한마디를 해 주세요 💛"></input>
+          </S.Title>
         </S.Background>
        </S.FullBackground>
        )}

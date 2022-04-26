@@ -42,3 +42,16 @@ float: right;
     margin-top: 15px;
   }
 `
+
+export const Title = styled.div`
+  margin-top: 35px;
+  margin-left: 30px;
+  input{
+    padding: 10px 20px 10px 20px;
+    width: 300px;
+    font-size: 15px;
+
+    border: solid 1.5px gray;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+`
