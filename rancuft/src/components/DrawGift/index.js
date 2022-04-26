@@ -24,6 +24,17 @@ function DrowGift() {
 
   let x = null;
   let  y = null;
+  let line = 5;
+  const range = document.getElementById("lineRange");
+  if(range) {
+    range.addEventListener("input", handlerRangeChange);
+  }
+
+  function handlerRangeChange(e) {
+    line = e.target.value;
+  }
+
+  
   const handlerMouseDown = e => {
     if(ctx) {
       drawing = true;
@@ -38,13 +49,16 @@ function DrowGift() {
     }
   }
 
+  
+
   const draw = e => {
     x = e.nativeEvent.offsetX;
     y = e.nativeEvent.offsetY;
+
     
     ctx.strokeStyle  = "orange";
-    ctx.lineWidth = 5;
     ctx.lineJoin = 'round';
+    ctx.lineWidth = line;
     
     if (!drawing){
       ctx.beginPath();
@@ -55,6 +69,8 @@ function DrowGift() {
     }
   
   }
+  
+
 
   return (
     // https://stickode.tistory.com/240 내가 원하는것!
@@ -71,7 +87,7 @@ function DrowGift() {
           onMouseMove = {draw}>이 브라우저는 캔버스를 지원하지 않습니다 😅<br/> 선물 받아보기는 어떠신가요?</canvas>
           </S.DrawBox>
           <S.Point>
-            <input type="range" min="0.1" max="5.0" step="0.1"/>
+            <input type="range" id="lineRange" min="0.1"  max="20.0" defaultValue = "5" step="0.1"/>
           </S.Point>
           HI
         </S.Background>
