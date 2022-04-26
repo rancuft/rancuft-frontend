@@ -27,25 +27,29 @@ function DrowGift() {
       drawing = true;
       var rect = canvas.current.getBoundingClientRect();
       ctx.fillStyle = 'red';
-      console.log('ctx true')
     }
   }
 
   const handlerMouseUp = e => {
     if(ctx) {
       drawing = false;
-      console.log('음 ')
     }
   }
 
   const draw = e => {
-    const x = e.offsetX;
-    const y = e.offsetY;
+   
+    const x = e.clientX;
+    const y = e.clientY;
     if (!drawing) return;
-    console.log('tt');
+  
+    ctx.strokeStyle  = "red";
+    ctx.lineWidth = 5;
+    ctx.lineJoin = 'round';
+
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(x, y);
+    ctx.closePath();
     ctx.stroke();
   }
 
@@ -58,7 +62,7 @@ function DrowGift() {
           <S.DrawBox>
           <canvas 
           ref={canvas} 
-          width={800} height={800}
+          width={400} height={350}
           onMouseDown={handlerMouseDown}
           onMouseUp={handlerMouseUp}
           onMouseMove = {draw}>이 브라우저는 캔버스를 지원하지 않습니다 😅<br/> 선물 받아보기는 어떠신가요?</canvas>
