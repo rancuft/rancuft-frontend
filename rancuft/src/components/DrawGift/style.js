@@ -24,7 +24,21 @@ export const DrawBox = styled.div`
   }
 
 `
+export const Pan = styled.div`
+  float: right;
+  img{
+    cursor: pointer;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    width: 30px;
+  }
+`
 
 export const Point = styled.div`
-
+float: right;
+  input{
+    cursor: pointer; // 올렸을시 손가락으로 변경
+    border-color: red;
+    margin-top: 15px;
+  }
 `
