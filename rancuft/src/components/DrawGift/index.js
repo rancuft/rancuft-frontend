@@ -78,12 +78,25 @@ function DrowGift() {
     <>           
       <S.FullBackground>
         <S.Background>
+          
+        <S.MoveButton>
+          <button className="gift_get" >
+            선물 받을래
+          </button>
+        </S.MoveButton>
+        <S.MoveButton>
+          <button className="like_gift">
+            내가 좋아하는 선물들
+          </button>
+        </S.MoveButton>
+        <S.PanSetBox>
           <S.Pan>
             <img alt="펜 그림입니다. 누르면 색깔을 고를 수 있습니다." title = "클릭 하시면 색상을 바꿀 수 있습니다." src="img/Vector.svg"/>
           </S.Pan>
           <S.Point>
             <input type="range" id="lineRange" min="0.1"  max="20.0" defaultValue = "5" step="0.1"/>
           </S.Point>
+        </S.PanSetBox>
           
           <S.DrawBox>
           <canvas 

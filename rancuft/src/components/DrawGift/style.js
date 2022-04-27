@@ -28,19 +28,22 @@ export const Pan = styled.div`
   float: right;
   img{
     cursor: pointer;
-    margin-left: 5px;
-    margin-bottom: 10px;
     width: 30px;
   }
 `
-
 export const Point = styled.div`
-float: right;
+  padding-top: 15px;
   input{
-    cursor: pointer; // 올렸을시 손가락으로 변경
+    cursor: pointer; // 올z렸을시 손가락으로 변경
     border-color: red;
-    margin-top: 15px;
   }
+`
+
+export const PanSetBox = styled.div`
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 58%;
+
 `
 
 export const Title = styled.div`
@@ -68,5 +71,30 @@ export const GiftButton = styled.div`
  button:hover{
    background-color: black;
    color:white;
+ }
+`
+
+export const MoveButton = styled.div`
+ button{
+   
+   padding: 5px 25px 5px 25px;
+   background-color: white;
+   font-weight: bold;
+   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+ }
+ button:hover{
+   background-color: black;
+   color:white;
+ }
+ .gift_get{ 
+  float: left;
+
+  padding-left: 50px;
+  padding-right: 50px;
+
+ }
+ .like_gift{
+   margin-left: 40px;
+
  }
 `
