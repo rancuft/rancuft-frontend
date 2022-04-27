@@ -58,6 +58,7 @@ function DrowGift() {
     
     ctx.strokeStyle  = "orange";
     ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
     ctx.lineWidth = line;
     
     if (!drawing){
@@ -103,8 +104,6 @@ function DrowGift() {
        </S.FullBackground>
     </>
   );
-  
-  
 }
 
 
