@@ -18,4 +18,12 @@ export const Title = styled.div`
 `
 
 export const ShareBox = styled.div`
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 15%;
+`
+
+export const Icon = styled.div`
+float: left;
+padding-right:50px;
 `

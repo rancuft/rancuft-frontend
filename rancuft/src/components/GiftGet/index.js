@@ -3,6 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import * as S from "./style.js";
 import * as C from "../../common/common.js"
 import * as G from "../../common/gift_common.js"
+import { Link } from "react-router-dom";
 
 function GiftGet() {
   const gift = "https://알고리즘.com/files/2018/06/21/c7eff37d7af8b4779f03229b2754de45";
@@ -20,7 +21,6 @@ function GiftGet() {
           <button className="like_gift">
             내가 좋아하는 선물들
           </button>
-          
         </G.MoveButton>
         <S.PicBox>
           <S.Title>
@@ -31,13 +31,26 @@ function GiftGet() {
           </G.DrawBox>
         </S.PicBox>
         <S.ShareBox>
-            <img src="" className="save"></img>
-            <img src="" className="twitter"></img>
-            <img src="" className="insta"></img>
-            <img src="" className="kakao"></img>
-        
+            <S.Icon>
+            <img src="img/kakaotalk.svg" 
+            className="kakao"
+            width={45}
+            ></img>
+            </S.Icon>
+            <S.Icon>
+            <img src="img/twitter.svg" 
+            className="twitter"
+            width={50}></img>
+            </S.Icon>
+   
+            
+            <img src="img/insta.svg" 
+            className="insta"
+            width={45}></img>
         </S.ShareBox>
+        <Link to = "/draw">
         <G.GiftButton>선물 하러 가기</G.GiftButton>
+        </Link>
 
       </C.Background>
     </C.FullBackground>
