@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import * as S from "./style.js";
+import * as C from "../../common/common"
+import { Link } from "react-router-dom";
 
+import Modal from "./modal";
 
 function DrowGift() {
   let drawing = false;
@@ -70,8 +73,20 @@ function DrowGift() {
     }
   
   }
+
+  function setModal() {
+
+  }
   
 
+  const [modalVisible, setModalVisible] = useState(false);
+  const openModal = () => {
+    setModalVisible(true)
+  }
+
+  const closeModal = () => {
+    setModalVisible(false)
+  }
 
   return (
     // https://stickode.tistory.com/240 내가 원하는것!
@@ -80,14 +95,20 @@ function DrowGift() {
         <S.Background>
           
         <S.MoveButton>
+          <Link to = "/gift-get">
           <button className="gift_get" >
             선물 받을래
           </button>
+        </Link>
+          
         </S.MoveButton>
+
         <S.MoveButton>
+        <Link to = "/gift-get"> 
           <button className="like_gift">
             내가 좋아하는 선물들
           </button>
+          </Link>
         </S.MoveButton>
         <S.PanSetBox>
           <S.Pan>
@@ -111,7 +132,13 @@ function DrowGift() {
             <input type="text" placeholder="행복의 말 한마디를 해 주세요 💛"></input>
           </S.Title>
           <S.GiftButton>
-            <button>선물 하기</button>
+            <button onClick={Modal}>선물 하기</button>
+            {
+              modalVisible && <Modal>
+                
+              </Modal>
+
+            }
           </S.GiftButton>
         </S.Background>
        </S.FullBackground>
