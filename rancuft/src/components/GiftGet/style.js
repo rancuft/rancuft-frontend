@@ -37,11 +37,11 @@ export const Icon = styled.div`
 export const ShareText = styled.p`
   font-size: 2px;
   display: inline-block;
+  font-weight: bold;
   margin-left: 11.5%;
 `
 
 export const ShareBox = styled.div`
-  background-color: yellow;
   margin-left: 16%;
   margin-right: 16%;
   & > p:first-of-type {
