@@ -31,22 +31,37 @@ function GiftGet() {
           </G.DrawBox>
         </S.PicBox>
         <S.ShareBox>
-            <S.Icon>
+        <S.ShareIconBox>
+            <S.Icon> 
+            
             <img src="img/kakaotalk.svg" 
             className="kakao"
             width={45}
             ></img>
             </S.Icon>
-            <S.Icon>
+                <S.Icon>
             <img src="img/twitter.svg" 
             className="twitter"
             width={50}></img>
             </S.Icon>
-   
-            
+        
+            <S.Icon>
             <img src="img/insta.svg" 
             className="insta"
             width={45}></img>
+            </S.Icon>
+            
+        </S.ShareIconBox>
+        <S.ShareText>
+          카카오톡에 공유 
+            </S.ShareText>
+        <S.ShareText>
+          트위터에 공유 
+        </S.ShareText>
+        <S.ShareText>
+          인스타에 공유 
+        </S.ShareText>
+        
         </S.ShareBox>
         <Link to = "/draw">
         <G.GiftButton>선물 하러 가기</G.GiftButton>

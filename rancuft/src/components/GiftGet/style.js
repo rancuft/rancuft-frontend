@@ -17,13 +17,34 @@ export const Title = styled.div`
   text-underline-position: under;
 `
 
-export const ShareBox = styled.div`
-  margin-left: 20%;
-  margin-right: 20%;
+export const ShareIconBox = styled.div`
+  margin-left: 15px;
+  margin-right: 2px;
   margin-top: 15%;
+  
+  & > div:last-child {
+    padding-right: 0px;
+  }
+  
 `
 
 export const Icon = styled.div`
-float: left;
-padding-right:50px;
+  display: inline-block;
+  padding-right:50px;
+  
+`
+
+export const ShareText = styled.p`
+  font-size: 2px;
+  display: inline-block;
+  margin-left: 11.5%;
+`
+
+export const ShareBox = styled.div`
+  background-color: yellow;
+  margin-left: 16%;
+  margin-right: 16%;
+  & > p:first-of-type {
+    margin-left: 0%;
+  }
 `
