@@ -50,6 +50,9 @@ function GiftGet() {
             </S.Icon>
             
         </S.ShareIconBox>
+        </S.ShareBox>
+        <S.ShareTextBox>
+
         <S.ShareText>
           카카오톡에 공유 
             </S.ShareText>
@@ -59,8 +62,9 @@ function GiftGet() {
         <S.ShareText>
           인스타에 공유 
         </S.ShareText>
+        </S.ShareTextBox>
         
-        </S.ShareBox>
+        
         <Link to = "/draw">
         <G.GiftButton>선물 하러 가기</G.GiftButton>
         </Link>
