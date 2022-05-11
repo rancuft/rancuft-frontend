@@ -16,8 +16,6 @@ function GiftGet() {
           <button className="gift_get">
             선물 받을래
           </button>
-        </G.MoveButton>
-        <G.MoveButton>
           <button className="like_gift">
             내가 좋아하는 선물들
           </button>

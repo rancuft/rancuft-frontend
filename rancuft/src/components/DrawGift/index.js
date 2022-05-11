@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import * as S from "./style.js";
-import * as C from "../../common/common"
 import { Link } from "react-router-dom";
 
 import Modal from "./modal";
+import * as C from "../../common/common.js"
+import * as G from "../../common/gift_common.js"
 
 function DrowGift() {
   let drawing = false;
@@ -91,25 +92,21 @@ function DrowGift() {
   return (
     // https://stickode.tistory.com/240 내가 원하는것!
     <>           
-      <S.FullBackground>
-        <S.Background>
+      <C.FullBackground>
+        <C.Background>
           
-        <S.MoveButton>
+        <G.MoveButton>
           <Link to = "/gift-get">
           <button className="gift_get" >
             선물 받을래
           </button>
         </Link>
-          
-        </S.MoveButton>
-
-        <S.MoveButton>
         <Link to = "/gift-get"> 
           <button className="like_gift">
             내가 좋아하는 선물들
           </button>
           </Link>
-        </S.MoveButton>
+        </G.MoveButton>
         <S.PanSetBox>
           <S.Pan>
             <img alt="펜 그림입니다. 누르면 색깔을 고를 수 있습니다." title = "클릭 하시면 색상을 바꿀 수 있습니다." src="img/Vector.svg"/>
@@ -140,8 +137,8 @@ function DrowGift() {
 
             }
           </S.GiftButton>
-        </S.Background>
-       </S.FullBackground>
+        </C.Background>
+       </C.FullBackground>
     </>
   );
 }
