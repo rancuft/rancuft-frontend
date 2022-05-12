@@ -29,11 +29,7 @@ function DrowGift() {
   let x = null;
   let  y = null;
   let line = 5;
-  const range = document.getElementById("lineRange");
-  if(range) {
-    range.addEventListener("input", handlerRangeChange);
-  }
-
+  
   function handlerRangeChange(e) {
     line = e.target.value;
   }
@@ -59,8 +55,7 @@ function DrowGift() {
     x = e.nativeEvent.offsetX;
     y = e.nativeEvent.offsetY;
 
-    
-    ctx.strokeStyle  = "orange";
+    ctx.strokeStyle  = 'orange';
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
     ctx.lineWidth = line;
@@ -68,11 +63,34 @@ function DrowGift() {
     if (!drawing){
       ctx.beginPath();
       ctx.moveTo(x,y);
+      
     } else {
+      ctx.strokeStyle  = "red";
       ctx.lineTo(x, y);
       ctx.stroke();
     }
+   
   
+  }
+
+  const moblieDraw = e => {
+    x =  e.touches[0].clientX - e.touches[0].target.offsetLeft;
+    y = e.touches[0].clientY - e.touches[0].target.offsetTop;
+    
+    ctx.strokeStyle  = 'orange';
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.lineWidth = line;
+    
+    if (!drawing){
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+      
+    } else {
+      ctx.strokeStyle  = "red";
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    }
   }
 
   function setModal() {
@@ -112,7 +130,9 @@ function DrowGift() {
             <img alt="펜 그림입니다. 누르면 색깔을 고를 수 있습니다." title = "클릭 하시면 색상을 바꿀 수 있습니다." src="img/Vector.svg"/>
           </S.Pan>
           <S.Point>
-            <input type="range" id="lineRange" min="0.1"  max="20.0" defaultValue = "5" step="0.1"/>
+            <input 
+            onChange={handlerRangeChange}
+            type="range" id="lineRange" min="0.1"  max="20.0" defaultValue = "5" step="0.1"/>
           </S.Point>
         </S.PanSetBox>
           
@@ -120,9 +140,16 @@ function DrowGift() {
           <canvas 
           ref={canvas} 
           width="400" height="350"
-          onMouseDown={handlerMouseDown}
+
+          onPointerDown={handlerMouseDown}
+
           onMouseUp={handlerMouseUp}
-          onMouseMove = {draw}>이 브라우저는 캔버스를 지원하지 않습니다 😅<br/> 선물 받아보기는 어떠신가요?</canvas>
+          onTouchEnd={handlerMouseDown}
+
+          onMouseMove = {draw}
+
+          onTouchMove = {moblieDraw}
+          >이 브라우저는 캔버스를 지원하지 않습니다 😅<br/> 선물 받아보기는 어떠신가요?</canvas>
           </S.DrawBox>
         
           <S.Title>
