@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import * as S from "./style.js";
+import { Link } from "react-router-dom";
 
 function Login() {
   // const [inputNickname, setInputNickname] = useState('')
@@ -33,7 +34,6 @@ function Login() {
   
   return (
     <>
-      {isMobile && (                
       <S.FullBackground>
         <S.CatImage>
           <img alt="귀여운 고양이 그림입니다" src="img/cat.png"/>
@@ -71,12 +71,13 @@ function Login() {
           <S.TigerImage>
             <img alt = "귀여운 호랑이 그립입니다" src="img/tiger.png"/>
           </S.TigerImage>
+          <Link to = "/gift-get">
           <S.GiftGetSpeechBubble>
             <button type="button" onClick={onClickGfitGive}>
               선물 <br></br>받을래요?
             </button>
-            
           </S.GiftGetSpeechBubble>
+          </Link>
           <S.GoImage>
           <img alt="귀여운 고슴도치 그림입니다" src="img/goImage.png"/>
         </S.GoImage>
