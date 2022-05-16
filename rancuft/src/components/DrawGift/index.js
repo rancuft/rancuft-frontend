@@ -29,14 +29,30 @@ function DrowGift() {
   let x = null;
   let  y = null;
   let line = 5;
-  
+
   function handlerRangeChange(e) {
     line = e.target.value;
   }
 
 
+  const handlerMobileDown = e => {
+    if(ctx) {
+      
+      if(!drawing) {
+        x =  e.touches[0].clientX - e.touches[0].target.offsetLeft;
+      y = e.touches[0].clientY - e.touches[0].target.offsetTop;
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+      }
+      
+      drawing = true;
+      var rect = canvas.current.getBoundingClientRect();
+      ctx.fillStyle = 'red';
+    }
+  }
   const handlerMouseDown = e => {
     if(ctx) {
+      
       drawing = true;
       var rect = canvas.current.getBoundingClientRect();
       ctx.fillStyle = 'red';
@@ -44,7 +60,16 @@ function DrowGift() {
   }
 
   const handlerMouseUp = e => {
+
     if(ctx) {
+      console.log('마우스업')
+      drawing = false;
+    }
+  }
+
+  const handlerMobileUp = e => {
+    if(ctx) {
+      console.log('모바일 업')
       drawing = false;
     }
   }
@@ -54,6 +79,8 @@ function DrowGift() {
   const draw = e => {
     x = e.nativeEvent.offsetX;
     y = e.nativeEvent.offsetY;
+    
+    console.log('모바일에선 여기 오면 안 되는뎅...')
 
     ctx.strokeStyle  = 'orange';
     ctx.lineJoin = 'round';
@@ -65,32 +92,25 @@ function DrowGift() {
       ctx.moveTo(x,y);
       
     } else {
-      ctx.strokeStyle  = "red";
       ctx.lineTo(x, y);
       ctx.stroke();
     }
-   
-  
   }
 
   const moblieDraw = e => {
     x =  e.touches[0].clientX - e.touches[0].target.offsetLeft;
     y = e.touches[0].clientY - e.touches[0].target.offsetTop;
-    
+
     ctx.strokeStyle  = 'orange';
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
     ctx.lineWidth = line;
     
-    if (!drawing){
-      ctx.beginPath();
-      ctx.moveTo(x,y);
-      
-    } else {
+    if (drawing){
       ctx.strokeStyle  = "red";
       ctx.lineTo(x, y);
       ctx.stroke();
-    }
+    } 
   }
 
   function setModal() {
@@ -141,10 +161,11 @@ function DrowGift() {
           ref={canvas} 
           width="400" height="350"
 
-          onPointerDown={handlerMouseDown}
+          onTouchStart={handlerMobileDown}
+          onMouseDown={handlerMouseDown}
 
           onMouseUp={handlerMouseUp}
-          onTouchEnd={handlerMouseDown}
+          onTouchEnd={handlerMobileUp}
 
           onMouseMove = {draw}
 
