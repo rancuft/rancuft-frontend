@@ -10,6 +10,9 @@ import * as G from "../../common/gift_common.js"
 function DrowGift() {
   let drawing = false;
 
+  let topSpace = 35;
+  let leftSpace = 15;
+
 
   const canvas = useRef(null);
 
@@ -39,8 +42,8 @@ function DrowGift() {
     if(ctx) {
       
       if(!drawing) {
-        x =  e.touches[0].clientX - e.touches[0].target.offsetLeft;
-      y = e.touches[0].clientY - e.touches[0].target.offsetTop;
+        x =  e.touches[0].clientX - e.touches[0].target.offsetLeft-leftSpace;
+      y = e.touches[0].clientY - e.touches[0].target.offsetTop-topSpace;
         ctx.beginPath();
         ctx.moveTo(x,y);
       }
@@ -62,14 +65,12 @@ function DrowGift() {
   const handlerMouseUp = e => {
 
     if(ctx) {
-      console.log('마우스업')
       drawing = false;
     }
   }
 
   const handlerMobileUp = e => {
     if(ctx) {
-      console.log('모바일 업')
       drawing = false;
     }
   }
@@ -98,8 +99,9 @@ function DrowGift() {
   }
 
   const moblieDraw = e => {
-    x =  e.touches[0].clientX - e.touches[0].target.offsetLeft;
-    y = e.touches[0].clientY - e.touches[0].target.offsetTop;
+    x =  e.touches[0].clientX - e.target.offsetLeft-leftSpace;
+    console.log(e.target.offsetLeft)
+    y = e.touches[0].clientY - e.target.offsetTop-topSpace;
 
     ctx.strokeStyle  = 'orange';
     ctx.lineJoin = 'round';
