@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import * as S from "./style.js";
 import { Link } from "react-router-dom";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
 import * as M from "../../common/modal.js";
 import * as C from "../../common/common.js";
@@ -91,7 +91,6 @@ function DrowGift() {
     }
   };
 
-
   const moblieDraw = (e) => {
     x = e.touches[0].clientX - e.target.offsetLeft - leftSpace;
     console.log(e.target.offsetLeft);
@@ -108,7 +107,6 @@ function DrowGift() {
       ctx.stroke();
     }
   };
-
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -170,23 +168,29 @@ function DrowGift() {
             ></input>
           </S.Title>
           <S.GiftButton>
-            <button onClick={()=>setModalIsOpen(true)}>선물 하기</button>
-            
-            <Modal isOpen={modalIsOpen} 
-                onRequestClose={()=> setModalIsOpen(false)}
-                ariaHideApp={false}
-                style={M.ModalStyle}>
+            <button onClick={() => setModalIsOpen(true)}>선물 하기</button>
 
-            <M.Span>
-              마음을 담은 당신의 선물
-              </M.Span> 
-              <M.Span>
-              지금 주시겠어요?
-              </M.Span>
-              <button onClick={()=>setModalIsOpen(false)}>네, 줄래요</button>
-              <button onClick={()=>setModalIsOpen(false)}>아직이요</button>
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={() => setModalIsOpen(false)}
+              ariaHideApp={false}
+              style={M.ModalStyle}
+            >
+              <M.Span>마음을 담은 당신의 선물</M.Span>
+              <M.Span>지금 주시겠어요?</M.Span>
+              <M.CenterAlignment>
+                <M.ModalButton>
+                  <button onClick={() => setModalIsOpen(false)}>
+                    네, 줄래요
+                  </button>
+                </M.ModalButton>
+                <M.ModalButton>
+                  <button onClick={() => setModalIsOpen(false)}>
+                    아직이요
+                  </button>
+                </M.ModalButton>
+              </M.CenterAlignment>
             </Modal>
-            
           </S.GiftButton>
         </C.Background>
       </C.FullBackground>
