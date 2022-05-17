@@ -110,6 +110,8 @@ function DrowGift() {
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  const [tsModalIsOpen, setTsModalIsOpen] = useState(false);
+
   return (
     // https://stickode.tistory.com/240 내가 원하는것!
     <>
@@ -180,9 +182,30 @@ function DrowGift() {
               <M.Span>지금 주시겠어요?</M.Span>
               <M.CenterAlignment>
                 <M.ModalButton>
-                  <button onClick={() => setModalIsOpen(false)}>
+                  <button onClick={() => [setTsModalIsOpen(true)]}>
                     네, 줄래요
                   </button>
+                  <Modal
+                    isOpen={tsModalIsOpen}
+                    ariaHideApp={false}
+                    style={M.TsModalStyle}>
+                      <M.Span>
+                  선물 고마워요 🐹
+                
+                  </M.Span>
+                  <M.Span>
+                    당신의 마음에 누군가 행복을 느낄 거예요
+                  </M.Span>
+                  <M.CenterAlignment>
+                  <M.ModalButton>
+                  <button onClick={() => [setModalIsOpen(false),setTsModalIsOpen(false)]}>
+                    확인
+                  </button>
+                </M.ModalButton>
+                </M.CenterAlignment>
+
+
+                  </Modal>
                 </M.ModalButton>
                 <M.ModalButton>
                   <button onClick={() => setModalIsOpen(false)}>

@@ -6,7 +6,19 @@ export const ModalStyle = {
   content: {
     position: "absolute",
     margin: "auto",
-    width: "210px",
+    fontSize:"14.5px",
+    width: "250px",
+    height: "100px",
+    background: "#3E3E3E",
+  },
+};
+
+export const TsModalStyle = {
+  content: {
+    position: "absolute",
+    margin: "auto",
+    width: "300px",
+    fontSize:"14.5px",
     height: "100px",
     background: "#3E3E3E",
   },
@@ -14,7 +26,6 @@ export const ModalStyle = {
 
 export const Span = styled.span`
   color: white;
-
   padding: 10px;
   padding-top: 0px;
   display: flex;
