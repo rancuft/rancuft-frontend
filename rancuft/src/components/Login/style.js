@@ -163,20 +163,15 @@ export const CatImage = styled.div`
 `;
 
 export const Title = styled.div`
-  text{
     font-size: 25px;
     background: linear-gradient(to right top, #7DFF5C, #A9FFF0);
     color: transparent;
     -webkit-background-clip: text;
-  }
-
 `
 
 export const TRandomGift = styled.div`
-  text{
     padding-left: 20px;
     word-spacing: 60px;
-  }
 `
 
 export const Music = styled.div`
@@ -188,7 +183,5 @@ img{
 }`
 
 export const TCute = styled.div`
-  text{
     padding-left: 70px;
-  }
 `

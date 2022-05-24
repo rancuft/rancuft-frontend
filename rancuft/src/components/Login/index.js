@@ -33,17 +33,17 @@ function Login() {
 
   
   return (
-    <>
+    <>             
       <S.FullBackground>
         <S.CatImage>
           <img alt="귀여운 고양이 그림입니다" src="img/cat.png"/>
         </S.CatImage>
         <S.Title>
           <S.TCute>
-            <text>귀요미</text>
+            귀요미
           </S.TCute>
           <S.TRandomGift>
-            <text>랜덤 선물</text>
+            랜덤 선물
           </S.TRandomGift>
         </S.Title>
         <S.Background>
@@ -76,6 +76,7 @@ function Login() {
             <button type="button" onClick={onClickGfitGive}>
               선물 <br></br>받을래요?
             </button>
+            
           </S.GiftGetSpeechBubble>
           </Link>
           <S.GoImage>
@@ -89,8 +90,7 @@ function Login() {
           </a>
         </S.Music>
        </S.FullBackground>
-       )}
-      {isPc && <h2>TEST</h2>}
+       
     </>
   );
 }
