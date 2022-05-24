@@ -11,8 +11,9 @@ import * as G from "../../common/gift_common.js";
 function DrowGift() {
   let drawing = false;
 
-  let topSpace = 35;
-  let leftSpace = 15;
+  console.log(window.screen.width )
+
+ 
 
   const canvas = useRef(null);
 
@@ -20,6 +21,8 @@ function DrowGift() {
 
   useEffect(() => {
     setCts(canvas.current.getContext("2d"));
+   
+
   }, []);
 
   const isMobile = useMediaQuery({
@@ -37,11 +40,22 @@ function DrowGift() {
     line = e.target.value;
   }
 
+  /*let topSpace = 35; /* 전체 width - 캔버스 크기 /2 */
+  /*let leftSpace = 15;*/
+  let topSpace = window.screen.height;
+  let leftSpace = window.screen.width;
+  
+  console.log(topSpace);
+  let leftt=(topSpace/2)-300;
+  
+
   const handlerMobileDown = (e) => {
     if (ctx) {
       if (!drawing) {
-        x = e.touches[0].clientX - e.touches[0].target.offsetLeft - leftSpace;
-        y = e.touches[0].clientY - e.touches[0].target.offsetTop - topSpace;
+
+        x = e.touches[0].clientX - e.touches[0].target.offsetLeft - (leftSpace-400)/2;
+        
+        y = e.touches[0].clientY - e.touches[0].target.offsetTop - leftt;
         ctx.beginPath();
         ctx.moveTo(x, y);
       }
@@ -92,9 +106,7 @@ function DrowGift() {
   };
 
   const moblieDraw = (e) => {
-    x = e.touches[0].clientX - e.target.offsetLeft - leftSpace;
-    console.log(e.target.offsetLeft);
-    y = e.touches[0].clientY - e.target.offsetTop - topSpace;
+   
 
     ctx.strokeStyle = "orange";
     ctx.lineJoin = "round";
@@ -102,6 +114,8 @@ function DrowGift() {
     ctx.lineWidth = line;
 
     if (drawing) {
+      x = e.touches[0].clientX - e.target.offsetLeft - (leftSpace-400)/2;
+      y = e.touches[0].clientY - e.target.offsetTop - leftt;   
       ctx.strokeStyle = "red";
       ctx.lineTo(x, y);
       ctx.stroke();
@@ -198,9 +212,11 @@ function DrowGift() {
                   </M.Span>
                   <M.CenterAlignment>
                   <M.ModalButton>
+                    <Link to ="/">
                   <button onClick={() => [setModalIsOpen(false),setTsModalIsOpen(false)]}>
                     확인
                   </button>
+                  </Link>
                 </M.ModalButton>
                 </M.CenterAlignment>
 
