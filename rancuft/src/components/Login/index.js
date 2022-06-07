@@ -23,14 +23,19 @@ function Login() {
   const onLoginSubmit = () => {
      Http.post('/user', 
      {
-       body: JSON.stringify({
          name: inputNickname,
          password: inputPassword,
-       }),
-     }).then(res => res.json())
+     })
      .then(res =>{
-       if(res.ACCESS_TOKEN) {
-         localStorage.setItem('login-token', res.ACCESS_TOKEN);
+       if(res.data.token) {
+         console.log('login success')
+         localStorage.setItem('Authorization', res.ACCESS_TOKEN);
+       }
+     })
+     .catch(function(error) {
+       var errorStatus = error.response.status;
+       if(errorStatus=='400') {
+         console.log('이미 존재하는 유저입니다. 비밀번호가 틀렸습니다.')
        }
      })
   };
@@ -85,11 +90,13 @@ function Login() {
                 placeholder="비밀번호를 입력해 줄래요?"
               ></input>
             </S.Box>
+            <Link to = "/draw">
             <S.SpeechBubble>
               <button type="button" onClick={onLoginSubmit}>
                 로그인 할래요?
               </button>
             </S.SpeechBubble>
+            </Link>
           </S.LoginBox>
           <S.TigerImage>
             <img alt = "귀여운 호랑이 그립입니다" src="img/tiger.png"/>
