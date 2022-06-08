@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import * as S from "./style.js";
 import * as C from "../../common/common.js";
 import * as G from "../../common/gift_common.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Http from "../../api/index.js";
 
@@ -14,6 +14,7 @@ function GiftGet() {
   const [title, setTitle] = useState("");
   const [id, setGiftId] = useState("");
   const [gift, setGift] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     Http.get("/gift")
@@ -36,7 +37,9 @@ function GiftGet() {
       <C.FullBackground>
         <C.Background>
           <G.MoveButton>
-            <button className="gift_get">선물 받을래</button>
+            <button className="gift_get" onClick={()=>window.location.reload()}>선물 받을래</button>
+        
+            
             <button className="like_gift">내가 좋아하는 선물들</button>
           </G.MoveButton>
           <S.PicBox>
