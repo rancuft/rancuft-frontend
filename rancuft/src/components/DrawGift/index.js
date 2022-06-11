@@ -8,12 +8,16 @@ import * as M from "../../common/modal.js";
 import * as C from "../../common/common.js";
 import * as G from "../../common/gift_common.js";
 
+import Http from "../../api/index.js";
+
 function DrowGift() {
+  const [gift, setGift] = useState('')
+  const [comment, setComment] = useState('')
+
   let drawing = false;
 
   console.log(window.screen.width )
 
- 
 
   const canvas = useRef(null);
 
@@ -21,8 +25,6 @@ function DrowGift() {
 
   useEffect(() => {
     setCts(canvas.current.getContext("2d"));
-   
-
   }, []);
 
   const isMobile = useMediaQuery({
@@ -39,6 +41,45 @@ function DrowGift() {
   function handlerRangeChange(e) {
     line = e.target.value;
   }
+  
+
+  const Authorization = 'Bearer '+localStorage.getItem('token');
+
+  const onGiftSend = () => {
+    var $canvas = document.getElementById('can')
+
+
+    var imgDataUrl = $canvas.toDataURL('image/png');
+    console.log(imgDataUrl)
+    
+    var blobBin = atob(imgDataUrl.split(',')[1]);	// base64 데이터 디코딩
+    var array = [];
+    for (var i = 0; i < blobBin.length; i++) {
+        array.push(blobBin.charCodeAt(i));
+    }
+    var file = new Blob([new Uint8Array(array)], {type: 'image/png'});	// Blob 생성
+    var formdata = new FormData();	// formData 생성
+    formdata.append("file", file);	// file data 추가
+    formdata.append("comment",comment);
+
+    console.log(Authorization+" aaaa");
+
+    Http.post(
+      '/gift', 
+      formdata, 
+      //{params: {comment}},
+      {headers: {Authorization}},
+      {processData: false},
+      {contentType: false},)
+    .then(res =>{
+    })
+    .catch(function(error) {
+      var errorStatus = error.response.status;
+      if(errorStatus=='400') {
+        
+      }
+    })
+ };
 
   /*let topSpace = 35; /* 전체 width - 캔버스 크기 /2 */
   /*let leftSpace = 15;*/
@@ -122,6 +163,10 @@ function DrowGift() {
     }
   };
 
+  const handlerSetComment = (e) => {
+    setComment(e.target.value)
+}
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [tsModalIsOpen, setTsModalIsOpen] = useState(false);
@@ -162,6 +207,7 @@ function DrowGift() {
 
           <S.DrawBox>
             <canvas
+              id="can"
               ref={canvas}
               width="400"
               height="350"
@@ -181,6 +227,7 @@ function DrowGift() {
             <input
               type="text"
               placeholder="행복의 말 한마디를 해 주세요 💛"
+              onChange={handlerSetComment}
             ></input>
           </S.Title>
           <S.GiftButton>
@@ -196,7 +243,7 @@ function DrowGift() {
               <M.Span>지금 주시겠어요?</M.Span>
               <M.CenterAlignment>
                 <M.ModalButton>
-                  <button onClick={() => [setTsModalIsOpen(true)]}>
+                  <button onClick={() => [setTsModalIsOpen(true), onGiftSend()]}>
                     네, 줄래요
                   </button>
                   <Modal
