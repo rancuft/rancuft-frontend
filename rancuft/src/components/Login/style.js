@@ -91,6 +91,7 @@ export const GiftGetSpeechBubble = styled.div`
     border-right-color: #fff;
 
     border-width: 6px;
+    
   
   }
   
@@ -105,6 +106,7 @@ export const GiftGetSpeechBubble = styled.div`
     border-right-color: #000;
 
     border-width: 7.5px;
+    
   }
   button:hover {
     background-color: black;
@@ -129,7 +131,7 @@ export const FullBackground = styled.div`
 `;
 
 
-export const LoginBox = styled.div`
+export const LoginBox = styled.form`
   input {
   }
 `;
@@ -161,6 +163,15 @@ export const CatImage = styled.div`
     position: absolute;
   }
 `;
+
+export const WelcomeBox = styled.p`
+  margin-bottom: 65%;
+  font-size: 20px;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 20%;
+`
+
 
 export const Title = styled.div`
     font-size: 25px;
