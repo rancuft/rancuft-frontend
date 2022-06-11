@@ -32,14 +32,21 @@ function GiftGet() {
       });
   }, []);
 
+  const loginCheck = () => {
+    if(localStorage.getItem('Authorization')) {
+      navigate('/draw');
+    } else {
+      navigate('/');
+      alert('로그인이 필요한 서비스입니다.');
+    }
+  }
+
   return (
     <>
       <C.FullBackground>
         <C.Background>
           <G.MoveButton>
             <button className="gift_get" onClick={()=>window.location.reload()}>선물 받을래</button>
-        
-            
             <button className="like_gift">내가 좋아하는 선물들</button>
           </G.MoveButton>
           <S.PicBox>
@@ -67,10 +74,7 @@ function GiftGet() {
             <S.ShareText>트위터에 공유</S.ShareText>
             <S.ShareText>인스타에 공유</S.ShareText>
           </S.ShareTextBox>
-
-          <Link to="/draw">
-            <G.GiftButton>선물 하러 가기</G.GiftButton>
-          </Link>
+            <G.GiftButton onClick={loginCheck}>선물 하러 가기</G.GiftButton>
         </C.Background>
       </C.FullBackground>
     </>
