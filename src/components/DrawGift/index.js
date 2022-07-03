@@ -37,9 +37,16 @@ function DrowGift() {
   let x = null;
   let y = null;
   let line = 5;
+  let color = "orange";
+
 
   function handlerRangeChange(e) {
     line = e.target.value;
+  }
+
+  function colorChange(e) {
+    color = e.target.id;
+    console.log(color);
   }
   
 
@@ -62,7 +69,7 @@ function DrowGift() {
     formdata.append("file", file);	// file data 추가
     formdata.append("comment",comment);
 
-    console.log(Authorization+" aaaa");
+    console.log(Authorization+" token");
 
     Http.post(
       '/gift', 
@@ -132,7 +139,7 @@ function DrowGift() {
 
     console.log("모바일에선 여기 오면 안 되는뎅...");
 
-    ctx.strokeStyle = "orange";
+    ctx.strokeStyle = color;
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
     ctx.lineWidth = line;
@@ -204,6 +211,13 @@ function DrowGift() {
               />
             </S.Point>
           </S.PanSetBox>
+          <S.ColorSet onClick={colorChange} id={"white"} style={{ backgroundColor: "white", borderColor: "black", borderWidth:"2px", borderStyle:"solid" }}  ></S.ColorSet>
+          <S.ColorSet onClick={colorChange} id={"black"} style={{ backgroundColor: "black" }}></S.ColorSet>
+          <S.ColorSet onClick={colorChange} id={"pink"} style={{ backgroundColor: "pink" }}></S.ColorSet>
+          <S.ColorSet onClick={colorChange} id={"orange" } style={{ backgroundColor: "orange" }}></S.ColorSet>
+          <S.ColorSet onClick={colorChange} id={"yellow"} style={{ backgroundColor: "yellow" }}></S.ColorSet>
+          <S.ColorSet onClick={colorChange} id={"green"} style={{ backgroundColor: "green" }}></S.ColorSet>
+          <S.ColorSet onClick={colorChange} id={"blue"} style={{ backgroundColor: "blue" }}></S.ColorSet>
 
           <S.DrawBox>
             <canvas

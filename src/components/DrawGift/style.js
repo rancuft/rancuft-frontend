@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useState } from "react";
 
 export const Background = styled.div`
   top: 30px;
@@ -16,12 +17,20 @@ export const FullBackground = styled.div`
   transform: translateX(50%);
 `;
 
+export const ColorSet = styled.div`
+  display: inline-block;
+ margin: 10px;
+ width: 35px;
+ height: 35px;
+ border-radius: 50%;
+ border-color: black;
+`
 
 export const DrawBox = styled.div`
-  canvas{
+
     background-color: white;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  }
+
 
 `
 export const Pan = styled.div`
@@ -61,6 +70,7 @@ export const Title = styled.div`
 
 export const GiftButton = styled.div`
  button{
+   font-size: 14px;
    margin-top: 40px;
    margin-left: 37%;
    padding: 5px 25px 5px 25px;
@@ -91,10 +101,14 @@ export const MoveButton = styled.div`
 
   padding-left: 50px;
   padding-right: 50px;
+  
 
  }
  .like_gift{
-   margin-left: 40px;
-
+   margin-left: 10px;
  }
 `
+
+function Test1() {
+  const [modal, setModal] = useState('');
+}

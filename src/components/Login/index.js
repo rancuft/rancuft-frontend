@@ -15,7 +15,7 @@ function Login() {
   let id = localStorage.getItem('Id')
 
   useEffect(()=>{
-    let token = localStorage.getItem('Authorization')
+    let token = localStorage.getItem('token')
     if(token){
       setIsLogin(true);
     } else {
@@ -29,7 +29,6 @@ function Login() {
   }
 
   const handleInputPw = (e) => {
-      console.log(e.target.value)
       setInputPassword(e.target.value)
   }
 
@@ -51,11 +50,12 @@ function Login() {
        if(res.data.token) {
         loginSuccess = true;
          console.log('login success');
-         localStorage.setItem('Authorization', res.ACCESS_TOKEN);
+         localStorage.setItem('token', res.data.token);
          localStorage.setItem('Id',res.data.name);
          console.log(res)
+         console.log('안녕하세여')
          navigate("/draw");
-         console.log(localStorage.getItem('Authorization'))
+         console.log(localStorage.getItem('token'))
        }
      })
      .catch(function(error) {

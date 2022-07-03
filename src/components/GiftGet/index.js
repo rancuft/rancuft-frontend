@@ -11,6 +11,7 @@ function GiftGet() {
   // var title= "dd";
   // var id;
   // var gift;
+
   const [title, setTitle] = useState("");
   const [id, setGiftId] = useState("");
   const [gift, setGift] = useState("");
@@ -33,7 +34,7 @@ function GiftGet() {
   }, []);
 
   const loginCheck = () => {
-    if(localStorage.getItem('Authorization')) {
+    if(localStorage.getItem('token')) {
       navigate('/draw');
     } else {
       navigate('/');
